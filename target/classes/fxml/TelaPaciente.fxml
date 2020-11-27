@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="374.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.cassio.farmaciamvnfx.controller.ControllerTelaPaciente">
+   <children>
+      <TableView fx:id="tableViewPaciente" layoutX="1.0" layoutY="229.0" prefHeight="145.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="tableColumnId" prefWidth="35.0" text="ID" />
+          <TableColumn fx:id="tableColumnNome" prefWidth="122.0" text="Nome" />
+            <TableColumn fx:id="tableColumnRg" prefWidth="76.0" text="RG" />
+            <TableColumn fx:id="tableColumnCpf" prefWidth="72.0" text="CPF" />
+            <TableColumn fx:id="tableColumnSexo" prefWidth="66.0" text="Sexo" />
+            <TableColumn fx:id="tableColumnNascimento" prefWidth="99.0" text="Nascimento" />
+            <TableColumn fx:id="tableColumnTelefone" prefWidth="64.0" text="Telefone" />
+            <TableColumn fx:id="tableColumnGravidade" prefWidth="65.0" text="Gravidade" />
+        </columns>
+      </TableView>
+      <TextField fx:id="textFieldId" editable="false" layoutX="38.0" layoutY="36.0" prefHeight="25.0" prefWidth="37.0" />
+      <Label layoutX="15.0" layoutY="40.0" text="ID" />
+      <Label layoutX="105.0" layoutY="40.0" text="Nome" />
+      <TextField fx:id="textFieldNome" layoutX="153.0" layoutY="36.0" prefHeight="25.0" prefWidth="435.0" />
+      <Label layoutX="21.0" layoutY="81.0" text="RG" />
+      <TextField fx:id="textFieldRg" layoutX="46.0" layoutY="77.0" prefHeight="25.0" prefWidth="232.0" />
+      <Label layoutX="296.0" layoutY="81.0" text="CPF" />
+      <TextField fx:id="textFieldCpf" layoutX="326.0" layoutY="77.0" prefHeight="25.0" prefWidth="232.0" />
+      <Label layoutX="15.0" layoutY="125.0" text="Sexo" />
+      <TextField fx:id="textFieldSexo" layoutX="48.0" layoutY="121.0" prefHeight="25.0" prefWidth="99.0" />
+      <Label layoutX="174.0" layoutY="125.0" text="Data de Nascimento" />
+      <DatePicker fx:id="datePickerNascimento" layoutX="287.0" layoutY="121.0" prefHeight="25.0" prefWidth="99.0" />
+      <Label layoutX="405.0" layoutY="125.0" text="Telefone" />
+      <TextField fx:id="textFieldTelefone" layoutX="464.0" layoutY="121.0" prefHeight="25.0" prefWidth="123.0" />
+      <Label layoutX="15.0" layoutY="166.0" text="Gravidade" />
+      <TextField fx:id="textFieldGravidade" layoutX="79.0" layoutY="162.0" prefHeight="25.0" prefWidth="54.0" />
+      <Label layoutX="215.0" layoutY="6.0" text="CADASTRO DE PACIENTE" />
+      <Button fx:id="buttonSalvar" layoutX="51.0" layoutY="196.0" mnemonicParsing="false" onAction="#handlerSalvar" text="Salvar" />
+      <Button fx:id="buttonExcluir" layoutX="136.0" layoutY="196.0" mnemonicParsing="false" onAction="#handlerExcluirPaciente" text="Excluir" />
+      <Button fx:id="buttonNovo" layoutX="228.0" layoutY="196.0" mnemonicParsing="false" onAction="#handlerNovoPaciente" text="Novo" />
+   </children>
+</AnchorPane>
