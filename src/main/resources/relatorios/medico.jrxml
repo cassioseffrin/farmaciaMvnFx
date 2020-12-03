@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="medico" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="711a7b44-1a99-4545-9073-f1811172050e">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DadosMedico"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="telefone" class="java.lang.Integer">
+		<fieldDescription><![CDATA[telefone]]></fieldDescription>
+	</field>
+	<field name="especialidade" class="java.lang.String">
+		<fieldDescription><![CDATA[especialidade]]></fieldDescription>
+	</field>
+	<field name="rg" class="java.lang.Integer">
+		<fieldDescription><![CDATA[rg]]></fieldDescription>
+	</field>
+	<field name="cpf" class="java.lang.Integer">
+		<fieldDescription><![CDATA[cpf]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[nome]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<field name="dataNascimento" class="java.time.LocalDate">
+		<fieldDescription><![CDATA[dataNascimento]]></fieldDescription>
+	</field>
+	<field name="sexo" class="java.lang.String">
+		<fieldDescription><![CDATA[sexo]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="62" splitType="Stretch">
+			<rectangle radius="18">
+				<reportElement x="0" y="0" width="551" height="41" backcolor="#FFFFE6" uuid="04bea036-6f27-4b23-9c6d-4848055b29ac"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Dashed" lineColor="#2500BA"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="550" height="41" forecolor="#000000" backcolor="#000000" uuid="109556a7-3381-4a89-9fe5-59b1edc5f2e1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Relatório de Médicos]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="07c13e8e-9e84-43e0-9eed-eed2bb604eea">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f09ad81a-ad3b-4da2-b54a-38715a6056b8"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="0" width="100" height="20" uuid="6603b180-f5d4-458b-a218-61092ce834e4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d6ab2e1c-d2d0-4b81-9883-18dbb71267d0"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Nascimento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="449" y="0" width="100" height="20" uuid="72076be1-ee50-4c24-84da-b8ed46e4b8d0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="90365274-cbed-41b1-b006-2d1ca2fcba34"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Especialidade]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="5" width="230" height="20" uuid="fd0b5880-69e9-4ca0-8a4b-6bc023ea0a29">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f09ad81a-ad3b-4da2-b54a-38715a6056b8"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="0" width="100" height="20" uuid="82f23c5a-664f-48fa-8748-4218f39b3042">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d6ab2e1c-d2d0-4b81-9883-18dbb71267d0"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{dataNascimento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="449" y="5" width="100" height="20" uuid="4b89f121-6861-4437-bebf-2b9cf3a2ed2c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="90365274-cbed-41b1-b006-2d1ca2fcba34"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{especialidade}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="34" splitType="Stretch">
+			<textField>
+				<reportElement x="410" y="0" width="139" height="30" uuid="f393f520-e32d-472c-b3af-be285c0a5725"/>
+				<textFieldExpression><![CDATA[ "Pág:" +    $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

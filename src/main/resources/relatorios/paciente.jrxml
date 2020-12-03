@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="paciente" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="56e43245-c505-4546-97df-2037b15043ed">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mysql"/>
+	<queryString language="SQL">
+		<![CDATA[select * from hospital.paciente ;]]>
+	</queryString>
+	<field name="id_paciente" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id_paciente"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_paciente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome_paciente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome_paciente"/>
+		<property name="com.jaspersoft.studio.field.label" value="nome_paciente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rg_paciente" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="rg_paciente"/>
+		<property name="com.jaspersoft.studio.field.label" value="rg_paciente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpf_paciente" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="cpf_paciente"/>
+		<property name="com.jaspersoft.studio.field.label" value="cpf_paciente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sexo_paciente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="sexo_paciente"/>
+		<property name="com.jaspersoft.studio.field.label" value="sexo_paciente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dataNascimento_paciente" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="dataNascimento_paciente"/>
+		<property name="com.jaspersoft.studio.field.label" value="dataNascimento_paciente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefone_paciente" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="telefone_paciente"/>
+		<property name="com.jaspersoft.studio.field.label" value="telefone_paciente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="gravidade" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="gravidade"/>
+		<property name="com.jaspersoft.studio.field.label" value="gravidade"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="paciente"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="id_paciente">
+		<groupExpression><![CDATA[$F{id_paciente}]]></groupExpression>
+	</group>
+	<group name="nome_paciente">
+		<groupExpression><![CDATA[$F{nome_paciente}]]></groupExpression>
+	</group>
+	<group name="rg_paciente">
+		<groupExpression><![CDATA[$F{rg_paciente}]]></groupExpression>
+	</group>
+	<group name="cpf_paciente">
+		<groupExpression><![CDATA[$F{cpf_paciente}]]></groupExpression>
+	</group>
+	<group name="sexo_paciente">
+		<groupExpression><![CDATA[$F{sexo_paciente}]]></groupExpression>
+	</group>
+	<group name="dataNascimento_paciente">
+		<groupExpression><![CDATA[$F{dataNascimento_paciente}]]></groupExpression>
+	</group>
+	<group name="telefone_paciente">
+		<groupExpression><![CDATA[$F{telefone_paciente}]]></groupExpression>
+	</group>
+	<group name="gravidade">
+		<groupExpression><![CDATA[$F{gravidade}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="147" y="10" width="260" height="30" uuid="5e6a4abb-2adf-4369-a478-0614ee903d91"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Relatório de Pacientes]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="220" height="15" uuid="8a7e1fbd-03b5-4430-9d28-4148d3c44246"/>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="0" width="100" height="15" uuid="7db78d8a-c7e7-4a8b-a515-778da64ee1b6"/>
+				<text><![CDATA[CPF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="0" width="100" height="15" uuid="cdb94fed-60bf-4f9a-b85a-d08e696507d2"/>
+				<text><![CDATA[Sexo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="0" width="100" height="15" uuid="322c5239-7a9f-4289-9707-dc9a6fa469c0"/>
+				<text><![CDATA[Data Nascimento]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="230" height="20" uuid="0a6afc0c-4ffa-4bdc-9fef-e7459cda23e1"/>
+				<textFieldExpression><![CDATA[$F{nome_paciente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="0" width="90" height="20" uuid="c60d2332-5bfc-402a-b20d-a75eb3dbe5fa"/>
+				<textFieldExpression><![CDATA[$F{cpf_paciente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="0" width="90" height="20" uuid="d3abbafb-48e6-4248-971e-204b09973c71"/>
+				<textFieldExpression><![CDATA[$F{sexo_paciente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="0" width="110" height="20" uuid="b9f811a5-1666-4ebb-9b49-fbe8d0dc2648"/>
+				<textFieldExpression><![CDATA[$F{dataNascimento_paciente}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="34" splitType="Stretch">
+			<textField>
+				<reportElement x="450" y="0" width="100" height="30" uuid="1d10a4ec-7805-44d5-8c11-b127ee0ce9af"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

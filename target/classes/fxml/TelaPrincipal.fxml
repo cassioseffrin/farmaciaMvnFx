@@ -11,12 +11,13 @@
         <menus>
           <Menu mnemonicParsing="false" text="Paciente">
             <items>
-                  <MenuItem fx:id="menuTeste" mnemonicParsing="false" onAction="#handlerFormTeste" text="Relatorio Paciente" />
+                  <MenuItem fx:id="menuTeste" mnemonicParsing="false" onAction="#handlerRelatorioPaciente" text="Relatorio Paciente" />
               <MenuItem fx:id="menuItemCadastrarPaciente" mnemonicParsing="false" onAction="#handlerTelaPaciente" text="Cadastrar" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Médico">
             <items>
+              <MenuItem fx:id="menuItemRelatorioMedico" mnemonicParsing="false" onAction="#handlerRelatorioMedico" text="Relatório" />
               <MenuItem fx:id="menuItemCadastrarMedico" mnemonicParsing="false" onAction="#handlerTelaMedico" text="Cadastrar" />
             </items>
           </Menu>

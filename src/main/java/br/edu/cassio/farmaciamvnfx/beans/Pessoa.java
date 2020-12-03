@@ -3,7 +3,7 @@ package br.edu.cassio.farmaciamvnfx.beans;
 
 import java.time.LocalDate;
 
-public abstract class Pessoa {
+public  class Pessoa {
     private int id;
     private String nome;
     private int rg;
