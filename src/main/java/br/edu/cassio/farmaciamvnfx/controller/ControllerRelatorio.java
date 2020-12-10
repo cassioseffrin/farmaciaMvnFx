@@ -1,5 +1,7 @@
 package br.edu.cassio.farmaciamvnfx.controller;
 
+import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.net.URL;
 import java.sql.Connection;
 import java.util.HashMap;
@@ -15,11 +17,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import net.sf.jasperreports.engine.JREmptyDataSource;
 import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.engine.data.JsonDataSource;
 import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;
 
@@ -29,47 +34,69 @@ public class ControllerRelatorio implements Initializable {
 	private Button btnSalvar;
 
 	@FXML
-	private void handleRelatorio(ActionEvent event) throws JRException {
+	private void handleRelatorioJSONURL(ActionEvent event) throws JRException {
 		System.out.println("ok");
 
-		DatabaseMySQL db = new DatabaseMySQL();
-		Connection conexao = db.conectar();
-//
-//		PacienteDao pdao = new PacienteDao();
-//		pdao.setConnection((Connection) conexao);
-//		List<Paciente> lst = pdao.listar();
-		
-
-		URL url = getClass().getResource("/relatorios/p4.jasper");
+		URL url = getClass().getResource("/relatorios/alunos.jasper");
 
 		JasperReport jasperReport = (JasperReport) JRLoader.loadObject(url);
-
-//		Map<String, Object> mapa = new HashMap<String, Object>();
-//		mapa.put("lstPacientes", lst);
-
-		JRBeanCollectionDataSource wrapBean = new JRBeanCollectionDataSource(ListaPacienteFactory.listaPacientes());
-
-		JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, wrapBean);
+		// asdf
+		// a
+		// sdlksjf
+		// asdf
+		JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, new JREmptyDataSource());
 		JasperViewer jasperViewer = new JasperViewer(jasperPrint, false);
 
-//		   JasperExportManager.exportReportToPdfFile(jasperPrint, outputFileName);
 		jasperViewer.setVisible(true);
 
 	}
 
-//	para salvar direto no disco
-	// long inicioContagem = System.currentTimeMillis();
-//	
-//	//Compilacao no formato jasper para o jrprint
-//	JasperFillManager.fillReportToFile("/relatorios/relatorioTeste.jasper", null, new JREmptyDataSource(1));
-//	System.err.println("Tempo de compilacao jasper -> jrprint: " + (System.currentTimeMillis() - inicioContagem));
-//	
-//	//Reinicia o contador
-//	inicioContagem = System.currentTimeMillis();
-//	
-//	//Geracao do PDF
-//	JasperExportManager.exportReportToPdfFile("/relatorios/relatorioTeste.jrprint");
-//	System.err.println("Tempo de geracao do PDF: " + (System.currentTimeMillis() - inicioContagem));
+	@FXML
+	private void handleRelatorio() throws JRException {
+
+		String rawJsonData = "[{\"name\":\"Nome\", \"value\":\"Cassio\"},"
+				+ "{\"name\":\"Sexo\", \"value\": \"Masculino\"}," + "{\"name\":\"CPF\", \"value\": \"02443342930\"}"
+				+ "]";
+
+		URL url = getClass().getResource("/relatorios/jsonteste.jasper");
+		JasperReport report = (JasperReport) JRLoader.loadObject(url);
+
+		// Converta a string json em uma matriz de bytes.
+		ByteArrayInputStream jsonDataStream = new ByteArrayInputStream(rawJsonData.getBytes());
+
+		// Cria a fonte de json dados
+		JsonDataSource ds = new JsonDataSource(jsonDataStream);
+		Map parameters = new HashMap();
+		parameters.put("title", "Teste de relatorio com JSON");
+		JasperPrint jasperPrint = JasperFillManager.fillReport(report, parameters, ds);
+
+		// Abre o Jasper Viewer
+		JasperViewer jasperViewer = new JasperViewer(jasperPrint, false);
+		jasperViewer.setVisible(true);
+	}
+
+	@FXML
+	private void handleRelatorioDB(ActionEvent event) throws JRException {
+		System.out.println("ok");
+
+		DatabaseMySQL db = new DatabaseMySQL();
+		Connection conexao = db.conectar();
+
+		PacienteDao pdao = new PacienteDao();
+		pdao.setConnection((Connection) conexao);
+		List<Paciente> lst = pdao.listar();
+
+		URL url = getClass().getResource("/relatorios/paciente.jasper");
+
+		JasperReport jasperReport = (JasperReport) JRLoader.loadObject(url);
+
+		JRBeanCollectionDataSource wrapBean = new JRBeanCollectionDataSource(lst);
+		JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, wrapBean);
+		JasperViewer jasperViewer = new JasperViewer(jasperPrint, false);
+
+		jasperViewer.setVisible(true);
+
+	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

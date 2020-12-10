@@ -1,27 +1,13 @@
-# farmaciaMvnFx
-
-Projeto desenvolvido como material de apoio da 2a fase do curso de Eng. SoftwareUnC 2020.
-
-Professor: Cassio Seffrin
-
-Tecnologias Envolvidas:
-- Java 15
-- Java FX
-- Maven
-- Banco de dados MySQL.
-
-
-
-DDL do Banco:
-
-
 -- MySQL 
 -- Server version	8.0.21
 
 --
 -- Table structure for table `agenda`
 --
+
 DROP TABLE IF EXISTS `agenda`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `agenda` (
   `id_agenda` int NOT NULL AUTO_INCREMENT,
   `data_agenda` date NOT NULL,
@@ -35,7 +21,10 @@ CREATE TABLE `agenda` (
 --
 -- Table structure for table `enfermeiro`
 --
+
 DROP TABLE IF EXISTS `enfermeiro`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `enfermeiro` (
   `id_enfermeiro` int NOT NULL AUTO_INCREMENT,
   `nome_enfermeiro` varchar(50) NOT NULL,
@@ -47,12 +36,15 @@ CREATE TABLE `enfermeiro` (
   `dataAdmissao` date NOT NULL,
   PRIMARY KEY (`id_enfermeiro`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `medico`
 --
 
 DROP TABLE IF EXISTS `medico`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `medico` (
   `id_medico` int NOT NULL AUTO_INCREMENT,
   `nome_medico` varchar(50) NOT NULL,
@@ -64,12 +56,15 @@ CREATE TABLE `medico` (
   `especialidade` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`id_medico`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `paciente`
 --
 
 DROP TABLE IF EXISTS `paciente`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `paciente` (
   `id_paciente` int NOT NULL AUTO_INCREMENT,
   `nome_paciente` varchar(50) NOT NULL,

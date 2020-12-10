@@ -106,7 +106,7 @@
 		<band height="34" splitType="Stretch">
 			<textField>
 				<reportElement x="410" y="0" width="139" height="30" uuid="f393f520-e32d-472c-b3af-be285c0a5725"/>
-				<textFieldExpression><![CDATA[ "Pág:" +    $V{PAGE_NUMBER}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Pág:" +    $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 		</band>
 	</columnFooter>
