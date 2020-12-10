@@ -21,6 +21,7 @@ DDL do Banco:
 --
 -- Table structure for table `agenda`
 --
+````
 DROP TABLE IF EXISTS `agenda`;
 CREATE TABLE `agenda` (
   `id_agenda` int NOT NULL AUTO_INCREMENT,
@@ -29,12 +30,13 @@ CREATE TABLE `agenda` (
   `paciente` varchar(50) NOT NULL,
   PRIMARY KEY (`id_agenda`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+````
 
 
 --
 -- Table structure for table `enfermeiro`
 --
+````
 DROP TABLE IF EXISTS `enfermeiro`;
 CREATE TABLE `enfermeiro` (
   `id_enfermeiro` int NOT NULL AUTO_INCREMENT,
@@ -48,10 +50,12 @@ CREATE TABLE `enfermeiro` (
   PRIMARY KEY (`id_enfermeiro`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+````
+
 --
 -- Table structure for table `medico`
 --
-
+````
 DROP TABLE IF EXISTS `medico`;
 CREATE TABLE `medico` (
   `id_medico` int NOT NULL AUTO_INCREMENT,
@@ -64,11 +68,12 @@ CREATE TABLE `medico` (
   `especialidade` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`id_medico`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+````
 
 --
 -- Table structure for table `paciente`
 --
-
+````
 DROP TABLE IF EXISTS `paciente`;
 CREATE TABLE `paciente` (
   `id_paciente` int NOT NULL AUTO_INCREMENT,
@@ -81,4 +86,5 @@ CREATE TABLE `paciente` (
   `gravidade` int DEFAULT NULL,
   PRIMARY KEY (`id_paciente`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+````
 
