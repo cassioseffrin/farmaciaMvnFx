@@ -40,10 +40,7 @@ public class ControllerRelatorio implements Initializable {
 		URL url = getClass().getResource("/relatorios/alunos.jasper");
 
 		JasperReport jasperReport = (JasperReport) JRLoader.loadObject(url);
-		// asdf
-		// a
-		// sdlksjf
-		// asdf
+ 
 		JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, new JREmptyDataSource());
 		JasperViewer jasperViewer = new JasperViewer(jasperPrint, false);
 
@@ -51,24 +48,43 @@ public class ControllerRelatorio implements Initializable {
 
 	}
 
+	
+	
+//	[
+//		   {
+//		      "nome":"Nome",
+//		      "valor":"Cassio"
+//		   },
+//		   {
+//		      "nome":"Sexo",
+//		      "valor":"Masculino"
+//		   },
+//		   {
+//		      "nome":"CPF",
+//		      "valor":"02443342930"
+//		   }
+//	]
+	
+	
 	@FXML
 	private void handleRelatorio() throws JRException {
 
-		String rawJsonData = "[{\"name\":\"Nome\", \"value\":\"Cassio\"},"
-				+ "{\"name\":\"Sexo\", \"value\": \"Masculino\"}," + "{\"name\":\"CPF\", \"value\": \"02443342930\"}"
+		String objetoJsonFormatoString = "[{\"nome\":\"Nome\", \"valor\":\"Cassio\"},"
+				+ "{\"nome\":\"Sexo\", \"valor\": \"Masculino\"}," + "{\"nome\":\"CPF\", \"valor\": \"02443342930\"}"
 				+ "]";
-
+		 
 		URL url = getClass().getResource("/relatorios/jsonteste.jasper");
 		JasperReport report = (JasperReport) JRLoader.loadObject(url);
 
 		// Converta a string json em uma matriz de bytes.
-		ByteArrayInputStream jsonDataStream = new ByteArrayInputStream(rawJsonData.getBytes());
+		ByteArrayInputStream jsonDataStream = new ByteArrayInputStream(objetoJsonFormatoString.getBytes());
 
 		// Cria a fonte de json dados
 		JsonDataSource ds = new JsonDataSource(jsonDataStream);
-		Map parameters = new HashMap();
-		parameters.put("title", "Teste de relatorio com JSON");
-		JasperPrint jasperPrint = JasperFillManager.fillReport(report, parameters, ds);
+		Map listaParametros = new HashMap();
+		listaParametros.put("titulo", "Teste de relatorio com JSON");
+		listaParametros.put("subTitulo", "valor do parametro subTitulo");
+		JasperPrint jasperPrint = JasperFillManager.fillReport(report, listaParametros, ds);
 
 		// Abre o Jasper Viewer
 		JasperViewer jasperViewer = new JasperViewer(jasperPrint, false);

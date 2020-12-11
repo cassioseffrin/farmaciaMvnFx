@@ -11,6 +11,7 @@ Tecnologias Envolvidas:
 - Banco de dados MySQL.
 
 
+$ mkdir projeto$ cd projeto$ git init$ git add *$ git commit -m "commit inicial"$ git remote add origin servidor:/home/ubuntu/git-repo/meu-projeto-repo.git$ git push -u origin master
 
 DDL do Banco:
 
