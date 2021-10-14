@@ -17,6 +17,7 @@ public class App extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/TelaPrincipal.fxml"));
         Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("/estilo.css").toExternalForm());
         stage.setScene(scene);
         stage.setTitle("Sistema de Farmacia");
         stage.show();

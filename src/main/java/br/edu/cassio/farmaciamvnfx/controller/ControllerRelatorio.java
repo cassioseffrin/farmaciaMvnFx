@@ -8,11 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
-
-import br.edu.cassio.farmaciamvnfx.adapter.ListaPacienteFactory;
-import br.edu.cassio.farmaciamvnfx.beans.Paciente;
-import br.edu.cassio.farmaciamvnfx.dao.PacienteDao;
-import br.edu.cassio.farmaciamvnfx.database.DatabaseMySQL;
+ 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -50,20 +46,7 @@ public class ControllerRelatorio implements Initializable {
 
 	
 	
-//	[
-//		   {
-//		      "nome":"Nome",
-//		      "valor":"Cassio"
-//		   },
-//		   {
-//		      "nome":"Sexo",
-//		      "valor":"Masculino"
-//		   },
-//		   {
-//		      "nome":"CPF",
-//		      "valor":"02443342930"
-//		   }
-//	]
+ 
 	
 	
 	@FXML
@@ -93,24 +76,24 @@ public class ControllerRelatorio implements Initializable {
 
 	@FXML
 	private void handleRelatorioDB(ActionEvent event) throws JRException {
-		System.out.println("ok");
-
-		DatabaseMySQL db = new DatabaseMySQL();
-		Connection conexao = db.conectar();
-
-		PacienteDao pdao = new PacienteDao();
-		pdao.setConnection((Connection) conexao);
-		List<Paciente> lst = pdao.listar();
-
-		URL url = getClass().getResource("/relatorios/paciente.jasper");
-
-		JasperReport jasperReport = (JasperReport) JRLoader.loadObject(url);
-
-		JRBeanCollectionDataSource wrapBean = new JRBeanCollectionDataSource(lst);
-		JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, wrapBean);
-		JasperViewer jasperViewer = new JasperViewer(jasperPrint, false);
-
-		jasperViewer.setVisible(true);
+//		System.out.println("ok");
+//
+//		DatabaseMySQL db = new DatabaseMySQL();
+//		Connection conexao = db.conectar();
+//
+//		PacienteDao pdao = new PacienteDao();
+//		pdao.setConnection((Connection) conexao);
+//		List<Paciente> lst = pdao.listar();
+//
+//		URL url = getClass().getResource("/relatorios/paciente.jasper");
+//
+//		JasperReport jasperReport = (JasperReport) JRLoader.loadObject(url);
+//
+//		JRBeanCollectionDataSource wrapBean = new JRBeanCollectionDataSource(lst);
+//		JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, wrapBean);
+//		JasperViewer jasperViewer = new JasperViewer(jasperPrint, false);
+//
+//		jasperViewer.setVisible(true);
 
 	}
 

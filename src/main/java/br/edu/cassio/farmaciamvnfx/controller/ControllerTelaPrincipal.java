@@ -25,6 +25,9 @@ public class ControllerTelaPrincipal implements Initializable {
     
     @FXML
     private MenuItem menuTeste;
+    
+    @FXML
+    private MenuItem menuAjuda;
 
     @FXML
     private AnchorPane anchorPaneFundo;
@@ -36,8 +39,8 @@ public class ControllerTelaPrincipal implements Initializable {
     }
 
     @FXML
-    private void handlerTelaPaciente(javafx.event.ActionEvent event) throws IOException {
-        AnchorPane a = FXMLLoader.load(getClass().getResource("/fxml/TelaPaciente.fxml"));
+    private void handlerTelaCliente(javafx.event.ActionEvent event) throws IOException {
+        AnchorPane a = FXMLLoader.load(getClass().getResource("/fxml/TelaCliente.fxml"));
         anchorPaneFundo.getChildren().setAll(a);
     }
 

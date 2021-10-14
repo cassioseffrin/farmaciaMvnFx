@@ -10,15 +10,16 @@ public  class Pessoa {
     private int cpf;
     private String sexo;
     LocalDate dataNascimento;
-    int telefone;
+    String telefone;
 
     public Pessoa() {
     }
     
+  
     
-    
-    public Pessoa(String nome, int rg, int cpf, String sexo, LocalDate dataNascimento, int telefone){
-        this.nome = nome;
+    public Pessoa(int id, String nome, int rg, int cpf, String sexo, LocalDate dataNascimento, String telefone){
+        this.id = id;
+    	this.nome = nome;
         this.rg = rg;
         this.sexo = sexo;
         this.cpf = cpf;
@@ -74,11 +75,11 @@ public  class Pessoa {
         this.dataNascimento = dataNascimento;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
     
