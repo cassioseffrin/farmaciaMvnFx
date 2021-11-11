@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.unc.rener.farmaciafx.controller.ControllerTelaPrincipal">
+   <children>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Cliente">
+            <items>
+                  <MenuItem fx:id="menuTeste" mnemonicParsing="false" onAction="#handlerRelatorioPaciente" text="Relatório Cliente" />
+              <MenuItem fx:id="menuItemCadastrarPaciente" mnemonicParsing="false" onAction="#handlerTelaCliente" text="Cadastrar" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Funcionário">
+            <items>
+              <MenuItem fx:id="menuItemCadastrarMedico" mnemonicParsing="false" onAction="#handlerTelaMedico" text="Cadastrar" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Estoque">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Cadastrar" />
+               </items></Menu>
+            <Menu mnemonicParsing="false" text="Serviço">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Ajuda">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Ajuda" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane fx:id="anchorPaneFundo" layoutY="27.0" prefHeight="374.0" prefWidth="600.0" style="-fx-background-color: #eee8aa;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets></AnchorPane>
+   </children>
+</AnchorPane>
